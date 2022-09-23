@@ -27,7 +27,7 @@ export default function App() {
 
 
   return (
-    <div>
+    <div className="h-screen md:flex md:items-center md:justify-center">
       {data.main ? <Card data={data} /> : <h1>No data</h1>}
     </div>
   )

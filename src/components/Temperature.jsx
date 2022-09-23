@@ -5,8 +5,8 @@ export default function Temperature(props) {
 
     return (
         <Fragment>
-            <h1 className="text-8xl font-semibold">{Math.round(temp)}°C</h1>
-            <div className="flex flex-col mb-2">
+            <h1 className="text-8xl font-semibold md:text-center">{Math.round(temp)}°C</h1>
+            <div className="mb-5 md:text-center">
                 <p>High: {Math.round(temp_max)} | Low: {Math.round(temp_min)}</p>
                 <p>
                     {
