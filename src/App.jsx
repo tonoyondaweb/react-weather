@@ -15,21 +15,20 @@ export default function App() {
         setLat(position.coords.latitude)
       })
 
-      await fetch(`${env.VITE_API_URL}/onecall?lat=${lat}&lon=${long}&appid=${env.VITE_API_KEY}`)
+      await fetch(`${env.VITE_API_URL}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${env.VITE_API_KEY}`)
         .then(res => res.json())
         .then(data => {
           setData(data)
-          console.log(data)
         })
     }
 
     fetchData()
-  }, [])
+  }, [lat, long])
 
 
   return (
     <div>
-      <Card />
+      {data.main ? <Card data={data} /> : <h1>No data</h1>}
     </div>
   )
 }
